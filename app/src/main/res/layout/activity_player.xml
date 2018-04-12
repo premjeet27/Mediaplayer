@@ -4,13 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context="com.dbrothers.pankaj_pc.mediaplayer.PlayerActivity">
+
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/songName"
-        android:layout_above="@id/img"
+        android:layout_above="@+id/img"
+        android:layout_alignLeft="@+id/img1"
+        android:layout_alignRight="@+id/img1"
         android:text="Song Name "
         android:gravity="center"
         />
@@ -36,12 +40,14 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:id="@+id/btnplay"
+            android:foreground="@color/colorGreen"
             android:layout_margin="5dp"
             android:background="@android:drawable/ic_media_play"/>
         <Button
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:id="@+id/btnpause"
+            android:foreground="@color/colorRed"
             android:layout_margin="5dp"
             android:background="@android:drawable/ic_media_pause"/>
         <Button

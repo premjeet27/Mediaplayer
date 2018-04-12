@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.IOException;
@@ -17,13 +18,16 @@ public class PlayerActivity extends AppCompatActivity implements View.OnClickLis
     List<AudioModel> songList;
     int position=0;
     TextView songName;
+    ImageView imageView;
     MediaPlayer myPlayer;
     Button play,pause,next,prev;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player);
-        play=(Button) findViewById(R.id.btnplay);
+        ImageView imageView=(ImageView)findViewById(R.id.img1);
+        imageView.setImageResource(R.drawable.om);
+         play=(Button) findViewById(R.id.btnplay);
         play.setOnClickListener(this);
         pause=(Button) findViewById(R.id.btnpause);
         pause.setOnClickListener(this);
@@ -50,6 +54,7 @@ public class PlayerActivity extends AppCompatActivity implements View.OnClickLis
                     myPlayer.setDataSource(songList.get(position).getaPath());
                     myPlayer.prepare();
                     myPlayer.start();
+
 
                 } catch (IOException e) {
                     e.printStackTrace();
